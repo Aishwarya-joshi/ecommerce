@@ -1,0 +1,16 @@
+<!-- otp_verification.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OTP Verification</title>
+</head>
+<body>
+    <h1>OTP Verification</h1>
+    <form method="post" action="{% url 'verify_otp' %}">
+        {% csrf_token %}
+        <input type="hidden" name="username" value="{{ username }}">
+        <input type="text" name="otp" placeholder="Enter OTP"><br><br>
+        <input type="submit" value="Verify OTP">
+    </form>
+</body>
+</html>
